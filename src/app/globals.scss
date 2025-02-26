@@ -1,0 +1,77 @@
+$spacing-md: 32px;
+$spacing-sm: 16px;
+$spacing-xs: 8px;
+
+$padding-md: $spacing-md;
+$padding-sm: $spacing-sm;
+$padding-xs: $spacing-xs;
+
+$margin-md: $spacing-md;
+$margin-sm: $spacing-sm;
+$margin-xs: $spacing-xs;
+
+$border-radius: 5px;
+
+@mixin container() {
+  padding: $padding-md $padding-sm;
+}
+
+@mixin sm-container() {
+  padding: $padding-sm;
+}
+
+@mixin border($color: $dark-gray-color) {
+  border: 1px solid $color;
+}
+
+$font-color: #0a0a0a;
+$font-white-color: #fff;
+$font-size-sm: 14px;
+$font-size-md: 26px;
+$font-family: 'graphik', arial, helvetica, sans-serif;
+
+$primary-color: #0000A3;
+$blue-color: #3162d0;
+$gray-color: #f8f8f8;
+$white-color: #fff;
+$dark-gray-color: #d3d2cf;
+
+
+@font-face {
+  font-family: 'graphik';
+  src: url(/Graphik-Regular-Web.woff2) format('woff2');
+  font-display: swap;
+}
+
+.h2 {
+  font-size: $font-size-md;
+  line-height: 1.25;
+}
+
+.button {
+  padding: $padding-xs;
+  color: $white-color;
+  border: none;
+  cursor: pointer;
+  background-color: $blue-color;
+  border-radius: $border-radius;
+}
+
+.input {
+  height: 30px;
+  padding: 0;
+  text-indent: 10px;
+  border-radius: $border-radius;
+  @include border();
+}
+
+.full-width {
+  width: 100%;
+}
+
+.mrg-top-0 {
+  margin-top: 0;
+}
+
+
+

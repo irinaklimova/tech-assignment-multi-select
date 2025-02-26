@@ -1,0 +1,32 @@
+@use '../app/globals';
+
+.multi-select {
+    margin: auto;
+    padding: globals.$padding-sm;
+    width: 400px;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    background-color: globals.$gray-color;
+    border-radius: globals.$border-radius;
+    @include globals.border();
+}
+
+.list {
+    margin: globals.$margin-sm 0;
+    padding: 0;
+    flex-grow: 2;
+    overflow: scroll;
+    list-style: none;
+}
+
+.list-item {
+    margin: globals.$margin-xs 0;
+}
+
+@media (max-width: 470px) {
+    .multi-select {
+        min-width: 150px;
+        width: auto;
+    }
+}

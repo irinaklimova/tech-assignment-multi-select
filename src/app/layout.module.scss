@@ -1,0 +1,42 @@
+@use 'globals';
+
+#html {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.body {
+  display: flex;
+  flex-grow: 2;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 300px;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: globals.$font-family;
+  font-weight: 100;
+  line-height: 1.5;
+  color: globals.$font-color;
+}
+
+.main {
+  flex-grow: inherit;
+  min-height: 100%;
+  @include globals.container()
+}
+
+.footer {
+  margin-bottom: 0;
+  color: globals.$font-white-color;
+  background-color: globals.$primary-color;
+  @include globals.container()
+}
+
+@media (max-width: 470px) {
+  .footer, .main {
+    @include globals.sm-container()
+  }
+}

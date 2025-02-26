@@ -1,0 +1,27 @@
+@use '../app/globals';
+
+$checkbox-size: 20px;
+
+.checkbox {
+    box-sizing: border-box;
+    width: $checkbox-size;
+    height: $checkbox-size;
+    margin: 0 10px 0 0;
+    padding: 3px;
+    appearance: none;
+    vertical-align: sub;
+    background-color: white;
+    @include globals.border();
+}
+
+.checkbox:checked:after {
+    content: " ";
+    width: 12px;
+    height: 12px;
+    background-color: globals.$blue-color;
+    display: block;
+}
+
+.checkbox:checked + .label {
+    color: globals.$blue-color
+}

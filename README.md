@@ -19,5 +19,5 @@ npm run test
 * I used NextJS framework to build React application and to provide API endpoint.
 * Every component/page has their css module for scoping related styles.
 * The code might be reusable I moved to separate components: SearchInput and CheckboxInput.
-* 
+* Critical functionality of components and utils is covered with Jest Unit tests
 

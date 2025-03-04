@@ -9,16 +9,17 @@ let res = {
     json: () => Promise.resolve({data})
 }
 
-describe('Categories Api', () => {
+describe('Common Api', () => {
     beforeAll(() => {
         spyFetch = jest.spyOn(global, 'fetch');
-    })
-    it('returns array of Categories', async () => {
+    });
+    it('getData returns data for given url', async () => {
         spyFetch.mockResolvedValue(res);
         const array = await getData('url');
-        expect(array[0]).toBe('Category 1');
+        expect(spyFetch).toHaveBeenCalledWith('url');
+        expect(array).toBe(data);
     });
-    it('returns the error', async () => {
+    it('returns the error if occurs', async () => {
         const err = new Error('Error');
         spyFetch.mockRejectedValue(err);
         await expect(getData('url')).rejects.toThrow(err);

@@ -49,6 +49,6 @@ export default function MultiSelect({items, handleApply, message } : { items: Ca
                 {!getSortedItems().length && !message && <span>No data to display</span>}
                 {message && <span>{message}</span>}
             </ul>
-        <button className='button full-width' onClick={() => handleApply(filteredItems.filter(item => item.checked))}>Apply</button>
+        <button className='button full-width' data-testid='apply-button' onClick={() => handleApply(filteredItems.filter(item => item.checked))}>Apply</button>
         </div>
     }

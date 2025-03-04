@@ -1,4 +1,4 @@
-import {describe, it, expect} from '@jest/globals';
+import {describe, it, expect, jest} from '@jest/globals';
 import {fireEvent, render, screen} from '@testing-library/react';
 import MultiSelect from '@/components/multi-select';
 

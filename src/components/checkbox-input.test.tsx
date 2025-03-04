@@ -1,4 +1,4 @@
-import {describe, it, expect} from '@jest/globals';
+import {describe, it, expect, jest} from '@jest/globals';
 import {fireEvent, render, screen} from '@testing-library/react';
 import CheckboxInput from './checkbox-input';
 import { Category } from '@/types/category';
@@ -23,12 +23,12 @@ describe('CheckboxInput component', () => {
     });
     it('renders checkbox with unchecked state', () => {
         render(<CheckboxInput item={uncheckedCategory} handleCheck={handleCheck}/>);
-        const checkbox = screen.getByRole('checkbox');
+        const checkbox = screen.getByRole<HTMLInputElement>('checkbox');
         expect(checkbox.checked).toBeFalsy();
     });
     it('renders checkbox with checked state', () => {
         render(<CheckboxInput item={checkedCategory} handleCheck={handleCheck}/>);
-        const checkbox = screen.getByRole('checkbox');
+        const checkbox = screen.getByRole<HTMLInputElement>('checkbox');
         expect(checkbox.checked).toBeTruthy();
     });
     it('handles the change of the checkbox value', () => {

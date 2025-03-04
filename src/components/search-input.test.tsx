@@ -1,4 +1,4 @@
-import {describe, it, expect} from '@jest/globals';
+import {describe, it, expect, jest} from '@jest/globals';
 import {fireEvent, render, screen} from '@testing-library/react';
 import SearchInput from './search-input';
 
@@ -9,7 +9,7 @@ let setSearch = jest.fn();
 describe('SearchInput component', () => {
     it('renders input component with search input value', () => {
         render(<SearchInput search={search} setSearch={setSearch}/>);
-        const input = screen.getByTestId('search-input');
+        const input = screen.getByTestId<HTMLInputElement>('search-input');
         expect(input.value).toBe(search);
     });
 
